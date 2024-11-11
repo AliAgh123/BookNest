@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>User Profile</title>
+		<link rel="stylesheet" href="style/profileStyles.css" />
+		<link rel="stylesheet" href="style/malak_styles.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar" aria-label="Main Navigation">
+				<div class="leftSideNav">
+					<h1 class="logo">Book Nest</h1>
+				</div>
+				<ul class="nav-menu">
+					<li><a href="malak_homePage.html">Home</a></li>
+					<li><a href="malak_products.html">Products</a></li>
+					<li id="cart-container">
+						<a href="malak_cart.html" id="cart-page-link">
+							<i class="bi bi-cart3">
+								<span
+									id="cart-count"
+									class="badge rounded-pill bg-danger hidden"
+									>0</span
+								>
+							</i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="profile-container">
+			<!-- Profile Sidebar -->
+			<div class="profile-sidebar">
+				<div class="profile-picture">
+					<img src="images/profileImage.jpg" alt="Profile Picture" />
+				</div>
+				<h2>John Doe</h2>
+				<p class="role">Full Stack Developer</p>
+				<p class="location">Bay Area, San Francisco, CA</p>
+
+				<!-- Social Links -->
+				<div class="social-links">
+					<p><strong>Instagram:</strong> <a href="#">bootdey</a></p>
+				</div>
+			</div>
+
+			<!-- Profile Details & Edit Form -->
+			<div class="profile-details">
+				<div class="basic-info">
+					<h3>Basic Information</h3>
+					<form class="edit-profile-form">
+						<label for="full-name">Full Name</label>
+						<input
+							type="text"
+							id="full-name"
+							name="full-name"
+							value="Kenneth Valdez"
+						/>
+
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" value="fip@jukmuh.al" />
+
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" value="" />
+
+						<label for="phone">Phone</label>
+						<input type="text" id="phone" name="phone" value="+961 1 123 456" />
+
+						<label for="address">Address</label>
+						<input
+							type="text"
+							id="address"
+							name="address"
+							value="Bay Area, San Francisco, CA"
+						/>
+
+						<label for="user-type">User Type</label>
+						<select id="user-type" name="user-type">
+							<option value="reader" selected>Reader</option>
+							<option value="author">Author</option>
+							<option value="publisher">Publisher</option>
+						</select>
+
+						<button type="submit" class="save-btn">Save Changes</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

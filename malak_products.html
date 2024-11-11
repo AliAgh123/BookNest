@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Nest - Products</title>
-  <link rel="stylesheet" href="malak_styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Old+London&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-</head>
-<body>
-  
-  <!-- <nav aria-label="Main Navigation">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Book Nest - Products</title>
+		<link rel="stylesheet" href="style/malak_styles.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Old+London&family=EB+Garamond:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class="products">
+		<!-- <nav aria-label="Main Navigation">
     <h1 class="logo">Book Nest</h1>
     <ul class="nav-menu">
       <li><a href="malak_homePage.html">Home</a></li>
@@ -19,111 +24,159 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav> -->
-  <header>
-    <nav aria-label="Main Navigation">
-      <h1 class="logo">Book Nest</h1>
-      <ul class="nav-menu">
-        <li><a href="malak_homePage.html">Home</a></li>
-        <li><a href="malak_products.html">Products</a></li>
-        <!-- <li><a href="about.html">About Us</a></li> -->
-        <!-- <li><a href="contact.html">Contact</a></li> -->
-        <li id="cart-container">
-            <a href="malak_cart.html" id="cart-page-link">
-              <i class="bi bi-cart3"></i>
-              <span id="cart-count" class="badge rounded-pill bg-danger hidden">0</span>
-            </a>
-          </i>
-        </li>
-      </ul>
-    </nav>
-    
-  </header>
-  
-  
-  <main>
-    <section class="product-list" aria-labelledby="products-heading">
-      <h2 id="products-heading">Our Collection</h2>
-      
-      <div class="product-item">
-        <h3>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h3>
-        <p>$13.97</p>
-        <p>by James Clear.</p>
-        <button type="button" aria-label="Add Book Title 1 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>Iron Flame (The Empyrean, 2)</h3>
-        <p>$10.98</p>
-        <p>by Rebecca Yarros.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>The 48 Laws of Power</h3>
-        <p>$18.00</p>
-        <p>by Robert Greene.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>The Psychology of Money: Timeless lessons on wealth, greed, and happiness </h3>
-        <p>$9.03</p>
-        <p>by Morgen Housel.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>Stop Overthinking: 23 Techniques to Relieve Stress, Stop Negative Spirals, Declutter Your Mind, and Focus on the Present</h3>
-        <p>$6.96</p>
-        <p>by Nick Trenton.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>Don't Believe Everything You Think: Why Your Thinking Is The Beginning & End Of Suffering</h3>
-        <p>$7.99</p>
-        <p>by Joseph Nguyen.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>It Starts with Us: A Novel (It Ends with Us)</h3>
-        <p>$20.54</p>
-        <p>by Colleen Hoover.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>It Ends with Us: A Novel</h3>
-        <p>$21.78</p>
-        <p>by Colleen Hoover.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>The Housemaid</h3>
-        <p>$7.05</p>
-        <p>by Freda McFadden.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>The Seven Husbands of Evelyn Hugo: A Novel</h3>
-        <p>$16.92</p>
-        <p>by Taylor Jenkins Reid.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>Interesting Facts For Curious Minds: 1572 Random But Mind-Blowing Facts About History, Science, Pop Culture And Everything In Between</h3>
-        <p>$10.59</p>
-        <p>by Jordan Moore.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-      <div class="product-item">
-        <h3>I Love You to the Moon and Back</h3>
-        <p>$5.79</p>
-        <p>by Amelia Hepworth.</p>
-        <button type="button" aria-label="Add Book Title 2 to Cart">Add to Cart</button>
-      </div>
-    </section>
-  </main>
-  
-  
-  <footer>
-    <p>&copy; 2024 Book Nest. All rights reserved.</p>
-  </footer>
-  <script src="malak_functionalities.js"></script>
-</body>
-</html>
+		<header>
+			<!-- <nav>
+    <h1 class="logo">Book Nest</h1>
+    <ul class="nav-menu">
+      <li><a href="malak_homePage.html">Home</a></li>
+      <li><a href="malak_products.html">Products</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav> -->
+			<nav class="navbar" aria-label="Main Navigation">
+				<h1 class="logo">Book Nest</h1>
+				<ul class="nav-menu">
+					<li><a href="malak_homePage.html">Home</a></li>
+					<li><a href="malak_products.html">Products</a></li>
+					<!-- <li><a href="about.html">About Us</a></li> -->
+					<!-- <li><a href="contact.html">Contact</a></li> -->
+					<li id="cart-container">
+						<a href="malak_cart.html" id="cart-page-link">
+							<i class="bi bi-cart3">
+								<span
+									id="cart-count"
+									class="badge rounded-pill bg-danger hidden"
+									>0</span
+								>
+							</i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
+		<main>
+			<section class="product-list" aria-labelledby="products-heading">
+				<h2 id="products-heading">Our Collection</h2>
+
+				<div class="product-item">
+					<h3>
+						Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad
+						Ones
+					</h3>
+					<p>$13.97</p>
+					<p>by James Clear.</p>
+					<button type="button" aria-label="Add Book Title 1 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>Iron Flame (The Empyrean, 2)</h3>
+					<p>$10.98</p>
+					<p>by Rebecca Yarros.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>The 48 Laws of Power</h3>
+					<p>$18.00</p>
+					<p>by Robert Greene.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>
+						The Psychology of Money: Timeless lessons on wealth, greed, and
+						happiness
+					</h3>
+					<p>$9.03</p>
+					<p>by Morgen Housel.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>
+						Stop Overthinking: 23 Techniques to Relieve Stress, Stop Negative
+						Spirals, Declutter Your Mind, and Focus on the Present
+					</h3>
+					<p>$6.96</p>
+					<p>by Nick Trenton.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>
+						Don't Believe Everything You Think: Why Your Thinking Is The
+						Beginning & End Of Suffering
+					</h3>
+					<p>$7.99</p>
+					<p>by Joseph Nguyen.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>It Starts with Us: A Novel (It Ends with Us)</h3>
+					<p>$20.54</p>
+					<p>by Colleen Hoover.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>It Ends with Us: A Novel</h3>
+					<p>$21.78</p>
+					<p>by Colleen Hoover.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>The Housemaid</h3>
+					<p>$7.05</p>
+					<p>by Freda McFadden.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>The Seven Husbands of Evelyn Hugo: A Novel</h3>
+					<p>$16.92</p>
+					<p>by Taylor Jenkins Reid.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>
+						Interesting Facts For Curious Minds: 1572 Random But Mind-Blowing
+						Facts About History, Science, Pop Culture And Everything In Between
+					</h3>
+					<p>$10.59</p>
+					<p>by Jordan Moore.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+				<div class="product-item">
+					<h3>I Love You to the Moon and Back</h3>
+					<p>$5.79</p>
+					<p>by Amelia Hepworth.</p>
+					<button type="button" aria-label="Add Book Title 2 to Cart">
+						Add to Cart
+					</button>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2024 Book Nest. All rights reserved.</p>
+		</footer>
+		<script src="js/malak_functionalities.js"></script>
+	</body>
+</html>

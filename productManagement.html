@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Product Management</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style/dashboardStyle.css" />
+		<link rel="stylesheet" href="style/malak_styles.css" />
+		<!-- Link to your CSS file -->
+	</head>
+	<body class="dashboardBody">
+		<header>
+			<nav class="navbar" aria-label="Main Navigation">
+				<div class="leftSideNav">
+					<button
+						class="sidebar-toggle"
+						aria-expanded="false"
+						onclick="toggleSidebar()"
+					>
+						☰
+					</button>
+					<h1 class="logo">Book Nest</h1>
+				</div>
+				<ul class="nav-menu">
+					<li><a href="malak_homePage.html">Home</a></li>
+					<li><a href="malak_products.html">Products</a></li>
+					<li id="cart-container">
+						<a href="malak_cart.html" id="cart-page-link">
+							<i class="bi bi-cart3">
+								<span
+									id="cart-count"
+									class="badge rounded-pill bg-danger hidden"
+									>0</span
+								>
+							</i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="dashboardContainer">
+			<aside class="sidebar" id="sidebar">
+				<h2>Admin Dashboard</h2>
+				<nav>
+					<a href="./dashboardHome.html">Dashboard Home</a>
+					<a class="active" href="./productManagement.html"
+						>Product Management</a
+					>
+					<a href="./orderManagement.html">Order Management</a>
+					<a href="./authors&publishers.html">Authors & Publishers</a>
+					<a href="./customersDashboard.html">Customers</a>
+				</nav>
+			</aside>
+			<div class="rightSideDashboard">
+				<!-- Main Content Area -->
+				<main class="content">
+					<!-- Page Header -->
+					<header class="title-header">
+						<h1>Product Management</h1>
+						<p>Manage books, eBooks, and other inventory.</p>
+					</header>
+
+					<!-- Add New Product Form -->
+					<section class="product-form">
+						<h2>Add / Edit Product</h2>
+						<form>
+							<label for="title">Book Title:</label>
+							<input type="text" id="title" name="title" required />
+
+							<label for="author">Author:</label>
+							<input type="text" id="author" name="author" required />
+
+							<label for="genre">Genre:</label>
+							<input type="text" id="genre" name="genre" required />
+
+							<label for="isbn">ISBN:</label>
+							<input type="text" id="isbn" name="isbn" />
+
+							<label for="format">Format:</label>
+							<select id="format" name="format">
+								<option value="paperback">Paperback</option>
+								<option value="hardcover">Hardcover</option>
+								<option value="ebook">eBook</option>
+							</select>
+
+							<label for="price">Price:</label>
+							<input
+								type="number"
+								id="price"
+								name="price"
+								step="0.01"
+								required
+							/>
+
+							<label for="stock">Stock Quantity:</label>
+							<input type="number" id="stock" name="stock" required />
+
+							<label for="image">Cover Image:</label>
+							<input type="file" id="image" name="image" />
+
+							<label for="description">Description:</label>
+							<textarea
+								id="description"
+								name="description"
+								rows="4"
+								required
+							></textarea>
+
+							<button type="submit">Save Product</button>
+						</form>
+					</section>
+
+					<!-- Product List Table -->
+					<section class="product-table">
+						<h2>Product Inventory</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Title</th>
+									<th>Author</th>
+									<th>Genre</th>
+									<th>Format</th>
+									<th>Price</th>
+									<th>Stock</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Book Title Example</td>
+									<td>Author Name</td>
+									<td>Fiction</td>
+									<td>Paperback</td>
+									<td>$15.99</td>
+									<td>25</td>
+									<td>
+										<button class="edit-btn">Edit</button>
+										<button class="delete-btn">Delete</button>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Book Title Example</td>
+									<td>Author Name</td>
+									<td>Fiction</td>
+									<td>Paperback</td>
+									<td>$15.99</td>
+									<td>25</td>
+									<td>
+										<button class="edit-btn">Edit</button>
+										<button class="delete-btn">Delete</button>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Book Title Example</td>
+									<td>Author Name</td>
+									<td>Fiction</td>
+									<td>Paperback</td>
+									<td>$15.99</td>
+									<td>25</td>
+									<td>
+										<button class="edit-btn">Edit</button>
+										<button class="delete-btn">Delete</button>
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>Book Title Example</td>
+									<td>Author Name</td>
+									<td>Fiction</td>
+									<td>Paperback</td>
+									<td>$15.99</td>
+									<td>25</td>
+									<td>
+										<button class="edit-btn">Edit</button>
+										<button class="delete-btn">Delete</button>
+									</td>
+								</tr>
+								<!-- More rows as needed -->
+							</tbody>
+						</table>
+					</section>
+				</main>
+			</div>
+		</div>
+		<script src="js/dashboard.js"></script>
+	</body>
+</html>

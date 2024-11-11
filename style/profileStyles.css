@@ -1,0 +1,188 @@
+@font-face {
+	font-family: "OldLondon";
+	src: url("../fonts/old_london/OldLondon.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "EB Garamond", serif;
+}
+
+:root {
+	--secondary-color: #b17457;
+	--primary-color: #4a4947;
+	--bg-color: #faf7f0;
+	--secondaryBg-color: #d8d2c2;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-container {
+	margin-top: 130px;
+	margin: 130px auto;
+	display: flex;
+	max-width: 1200px;
+	width: 100%;
+	gap: 20px;
+}
+
+/* Profile Sidebar */
+.profile-sidebar {
+	width: 300px;
+	background-color: var(--secondaryBg-color);
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.profile-picture img {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin-bottom: 15px;
+}
+
+.profile-sidebar h2 {
+	font-size: 1.6em;
+	color: var(--primary-color);
+}
+
+.profile-sidebar .role {
+	color: var(--secondary-color);
+	margin-bottom: 10px;
+}
+
+.profile-sidebar .location {
+	color: var(--primary-color);
+	margin-bottom: 20px;
+}
+
+.follow-btn,
+.message-btn {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	margin-top: 10px;
+	cursor: pointer;
+	color: var(--bg-color);
+	width: 100%;
+}
+
+.follow-btn {
+	background-color: var(--primary-color);
+}
+
+.message-btn {
+	background-color: var(--secondary-color);
+}
+
+.social-links p {
+	font-size: 0.9em;
+	color: var(--primary-color);
+	margin-top: 10px;
+}
+
+/* Profile Details */
+.profile-details {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.basic-info {
+	background-color: var(--secondaryBg-color);
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.basic-info h3 {
+	font-size: 1.4em;
+	color: var(--primary-color);
+	margin-bottom: 15px;
+}
+
+/* Edit Profile Form */
+.edit-profile-form label {
+	display: block;
+	font-weight: bold;
+	color: var(--primary-color);
+	margin-top: 10px;
+}
+
+.edit-profile-form input[type="text"],
+.edit-profile-form input[type="email"],
+.edit-profile-form input[type="password"],
+.edit-profile-form select {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid var(--secondaryBg-color);
+	border-radius: 5px;
+	color: var(--primary-color);
+	font-family: "EB Garamond", serif;
+}
+
+.save-btn {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: var(--secondary-color);
+	color: var(--bg-color);
+	margin-top: 15px;
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+	.profile-container {
+		flex-direction: column;
+		padding: 10px;
+	}
+	.profile-image {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.profile-details {
+		text-align: center;
+		width: 100%;
+	}
+}
+
+/* Tablets */
+@media (min-width: 600px) and (max-width: 900px) {
+	.profile-container {
+		flex-direction: column;
+		padding: 20px;
+	}
+	.profile-image {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+/* Desktops */
+@media (min-width: 900px) {
+	.profile-container {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 30px;
+	}
+	.profile-image {
+		width: 30%;
+	}
+	.profile-details {
+		width: 65%;
+	}
+}

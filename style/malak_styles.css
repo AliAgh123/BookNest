@@ -1,0 +1,261 @@
+@font-face {
+	font-family: "OldLondon";
+	src: url("../fonts/old_london/OldLondon.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.homepage,
+.products {
+	height: 100%;
+	margin: 65.5px 0 0 0;
+	font-family: "EB Garamond", serif;
+	display: flex;
+	flex-direction: column;
+	background: url("https://c4.wallpaperflare.com/wallpaper/526/8/1002/library-interior-interior-design-books-wallpaper-preview.jpg")
+		no-repeat center center fixed;
+	background-size: cover;
+}
+
+.main-content {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	margin-top: 65.5px;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #b17457;
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 10;
+}
+
+.logo {
+	font-family: "OldLondon", serif;
+	color: #faf7f0;
+	font-size: 2rem;
+}
+
+.nav-menu {
+	list-style-type: none;
+	display: flex;
+	gap: 1rem;
+}
+
+.nav-menu a {
+	text-decoration: none;
+	color: #faf7f0;
+	font-size: 1.1rem;
+}
+
+.hero {
+	text-align: center;
+	padding: 3rem 1rem;
+	background-color: rgba(74, 73, 71, 0.7);
+
+	color: #d8d2c2;
+	margin-bottom: 2rem;
+}
+
+.hero button {
+	margin-top: 1rem;
+	padding: 0.8rem 2rem;
+	background: linear-gradient(45deg, #b17457, #f78b4a);
+	color: #d8d2c2;
+	border: none;
+	border-radius: 30px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero button:hover {
+	background: linear-gradient(45deg, #f78b4a, #b17457);
+	transform: scale(1.1);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.product-list {
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 2.5rem;
+	background-color: #d8d2c2;
+	border-radius: 15px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-list h2 {
+	text-align: center;
+	color: #b17457;
+	margin-bottom: 2rem;
+	font-size: 2.5rem;
+}
+
+.product-item {
+	background-color: #fff;
+	padding: 1.5rem;
+	margin: 1rem 0;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-item h3 {
+	color: #b17457;
+	font-size: 1.8rem;
+}
+
+.product-item p {
+	font-size: 1.1rem;
+	color: #666;
+	margin: 0.5rem 0 1rem;
+}
+
+.product-item button {
+	padding: 0.7rem 1.2rem;
+	background-color: #4a4947;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+	background-color: #b17457;
+}
+
+footer {
+	text-align: center;
+	padding: 2rem;
+	background-color: #4a4947;
+	color: #faf7f0;
+}
+
+.cart-section {
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 2.5rem;
+	background-color: #d8d2c2;
+	border-radius: 15px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cart-section h2 {
+	text-align: center;
+	color: #b17457;
+	margin-bottom: 2.5rem;
+	font-size: 2.8rem;
+}
+
+#cart-items-container {
+	margin: 1.5rem 0;
+}
+
+.cart-item {
+	background-color: #fff;
+	padding: 1.5rem;
+	margin: 1.5rem 0;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item h3 {
+	color: #b17457;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.cart-item p {
+	font-size: 1.2rem;
+	color: #666;
+	margin: 0.5rem 0 1.2rem;
+}
+
+.cart-actions {
+	text-align: center;
+	margin-top: 3rem;
+}
+
+button#clear-cart {
+	padding: 0.8rem 1.5rem;
+	background-color: #4a4947;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 1.1rem;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button#clear-cart:hover {
+	background-color: #b17457;
+	transform: translateY(-3px);
+}
+
+.remove-btn {
+	background-color: #4a4947;
+	color: white;
+	border: none;
+	padding: 7px 12px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+	background-color: #f78b4a;
+}
+
+#clear-cart {
+	margin-top: 20px;
+	background-color: #4a4947;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#clear-cart:hover {
+	background-color: #b17457;
+}
+
+.hidden {
+	display: none;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Authors and Publishers Management</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style/dashboardStyle.css" />
+		<link rel="stylesheet" href="style/malak_styles.css" />
+	</head>
+	<body class="dashboardBody">
+		<header>
+			<nav class="navbar" aria-label="Main Navigation">
+				<div class="leftSideNav">
+					<button
+						class="sidebar-toggle"
+						aria-expanded="false"
+						onclick="toggleSidebar()"
+					>
+						☰
+					</button>
+					<h1 class="logo">Book Nest</h1>
+				</div>
+				<ul class="nav-menu">
+					<li><a href="malak_homePage.html">Home</a></li>
+					<li><a href="malak_products.html">Products</a></li>
+					<li id="cart-container">
+						<a href="malak_cart.html" id="cart-page-link">
+							<i class="bi bi-cart3">
+								<span
+									id="cart-count"
+									class="badge rounded-pill bg-danger hidden"
+									>0</span
+								>
+							</i>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Sidebar (optional, if consistent with dashboard design) -->
+		<div class="dashboardContainer">
+			<aside class="sidebar" id="sidebar">
+				<h2>Admin Dashboard</h2>
+				<nav>
+					<a href="./dashboardHome.html">Dashboard Home</a>
+					<a href="./productManagement.html">Product Management</a>
+					<a href="./orderManagement.html">Order Management</a>
+					<a class="active" href="./authors&publishers.html"
+						>Authors & Publishers</a
+					>
+					<a href="./customersDashboard.html">Customers</a>
+				</nav>
+			</aside>
+
+			<!-- Main Content Area -->
+			<div class="rightSideDashboard">
+				<div class="content">
+					<!-- Page Header -->
+					<header class="title-header">
+						<h1>Authors & Publishers Management</h1>
+						<p>
+							Manage and view all authors and publishers registered on the
+							platform.
+						</p>
+					</header>
+
+					<!-- Form to Add New Author/Publisher -->
+					<section class="add-author-publisher">
+						<h2>Add New Author/Publisher</h2>
+						<form class="author-publisher-form" action="#" method="POST">
+							<label for="name">Name:</label>
+							<input type="text" id="name" name="name" required />
+
+							<label for="type">Type:</label>
+							<select id="type" name="type" required>
+								<option value="author">Author</option>
+								<option value="publisher">Publisher</option>
+							</select>
+
+							<label for="description">Description:</label>
+							<textarea
+								id="description"
+								name="description"
+								rows="4"
+								required
+							></textarea>
+
+							<button type="submit">Add</button>
+						</form>
+					</section>
+
+					<!-- Table of Authors and Publishers -->
+					<section class="author-publisher-list">
+						<h2>Authors and Publishers List</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Type</th>
+									<th>Description</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Sample Rows (These would be populated dynamically in a real app) -->
+								<tr>
+									<td>1</td>
+									<td>John Doe</td>
+									<td>Author</td>
+									<td>Famous for historical novels</td>
+									<td>
+										<button class="edit-btn">Edit</button>
+										<button class="delete-btn">Delete</button>
+									</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Jane Publishing House</td>
+									<td>Publisher</td>
+									<td>Publishes modern literature</td>
+									<td>
+										<button class="edit-btn">Edit</button>
+										<button class="delete-btn">Delete</button>
+									</td>
+								</tr>
+								<!-- End of Sample Rows -->
+							</tbody>
+						</table>
+					</section>
+				</div>
+			</div>
+		</div>
+		<script src="js/dashboard.js"></script>
+	</body>
+</html>

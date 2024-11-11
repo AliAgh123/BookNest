@@ -1,0 +1,640 @@
+@font-face {
+	font-family: "OldLondon";
+	src: url("../fonts/old_london/OldLondon.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--secondary-color: #b17457;
+	--primary-color: #4a4947;
+	--bg-color: #faf7f0;
+	--secondaryBg-color: #d8d2c2;
+	--card-bg-color: #ffffff;
+	--text-color: #333;
+	--header-color: #4a4947;
+	--highlight-color: #815641;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "EB Garamond", serif;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+}
+
+.dashboardBody header {
+	height: 100%;
+	width: 100%;
+	margin: 35px 0 20px 0;
+	font-family: "EB Garamond", serif;
+	display: flex;
+	flex-direction: column;
+}
+
+.dashboardContainer {
+	display: flex;
+}
+
+.rightSideDashboard {
+	flex-grow: 1;
+}
+
+/* Sidebar Styling */
+.sidebar {
+	width: 250px;
+	background-color: var(--primary-color);
+	color: var(--bg-color);
+	padding: 20px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	position: fixed;
+	top: 65.5px;
+	left: 0;
+	transition: left 0.3s ease;
+	z-index: 10;
+}
+
+.sidebar.show {
+	left: 0;
+}
+
+.sidebar h2 {
+	font-size: 1.8em;
+	color: var(--highlight-color);
+	margin-bottom: 20px;
+}
+
+.sidebar nav {
+	width: 100%;
+}
+
+.sidebar nav a {
+	width: 100%;
+	display: block;
+	margin: 15px 0;
+	padding: 10px 5px;
+	color: var(--bg-color);
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+.leftSideNav {
+	display: flex;
+}
+
+.sidebar nav a:hover {
+	color: var(--highlight-color);
+	background-color: var(--bg-color);
+	border-radius: 10px;
+}
+
+.sidebar nav a.active {
+	color: var(--highlight-color);
+	background-color: var(--bg-color);
+	border-radius: 10px;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+	width: 50px;
+	height: 50px;
+	margin: auto 20px;
+	display: none;
+	background-color: var(--primary-color);
+	color: var(--bg-color);
+	border: none;
+	padding: 10px 15px;
+	font-size: 1.5em;
+	cursor: pointer;
+	/* position: sticky;
+	top: 10px;
+	left: 10px; */
+	z-index: 1000;
+}
+
+/* Main Content Area */
+.content {
+	margin-left: 270px;
+	padding: 20px;
+	background-color: var(--bg-color);
+	flex-grow: 1;
+	transition: margin-left 0.3s ease;
+}
+
+.title-header {
+	margin-bottom: 20px;
+}
+
+.title-header h1 {
+	font-size: 2em;
+	color: var(--header-color);
+}
+
+.title-header p {
+	font-size: 1.2em;
+	color: var(--secondary-color);
+}
+
+/* Summary Cards */
+.summary-cards {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 30px;
+	flex-wrap: wrap;
+}
+
+.card {
+	background-color: var(--card-bg-color);
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	flex: 1 1 200px; /* Allows cards to shrink or expand based on available space */
+	text-align: center;
+	color: var(--primary-color);
+}
+
+.card h3 {
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	color: var(--secondary-color);
+}
+
+.card p {
+	font-size: 1.8em;
+	color: var(--highlight-color);
+}
+
+/* Recent Activity */
+.recent-activity h2,
+.quick-actions h2 {
+	font-size: 1.6em;
+	margin-bottom: 15px;
+	color: var(--header-color);
+}
+
+.recent-activity ul {
+	list-style: none;
+}
+
+.recent-activity li {
+	padding: 10px;
+	background-color: var(--secondaryBg-color);
+	border-radius: 6px;
+	margin-bottom: 10px;
+	color: var(--primary-color);
+}
+
+/* Quick Actions */
+.quick-actions .action-buttons {
+	display: flex;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.quick-actions button {
+	background-color: var(--secondary-color);
+	color: var(--bg-color);
+	padding: 12px 20px;
+	border: none;
+	border-radius: 6px;
+	font-size: 1em;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.quick-actions button:hover {
+	background-color: var(--highlight-color);
+}
+
+/* --------------------------------- Product Management ---------------------------------- */
+
+/* Product Form Styling */
+.product-form,
+.add-author-publisher {
+	background-color: var(--card-bg-color);
+	padding: 20px;
+	margin-bottom: 30px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-form h2,
+.add-author-publisher h2 {
+	font-size: 1.6em;
+	color: var(--header-color);
+	margin-bottom: 15px;
+}
+
+.product-form label,
+.author-publisher-form label {
+	display: block;
+	margin-top: 10px;
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="file"],
+.product-form textarea,
+.product-form select,
+.author-publisher-form input[type="text"],
+.author-publisher-form textarea,
+.author-publisher-form select {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid var(--secondaryBg-color);
+	border-radius: 5px;
+	font-family: "EB Garamond", serif;
+	color: var(--text-color);
+}
+
+.product-form button,
+.author-publisher-form button {
+	background-color: var(--secondary-color);
+	color: var(--bg-color);
+	padding: 12px 20px;
+	border: none;
+	border-radius: 6px;
+	font-size: 1em;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: 15px;
+}
+
+.product-form button:hover,
+.author-publisher-form button:hover {
+	background-color: var(--highlight-color);
+}
+
+/* Product List Table Styling */
+.product-table,
+.orders-table,
+.author-publisher-list,
+.customer-list {
+	background-color: var(--card-bg-color);
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-table h2,
+.orders-table h2,
+.author-publisher-list h2,
+.customer-list h2 {
+	font-size: 1.6em;
+	color: var(--header-color);
+	margin-bottom: 15px;
+}
+
+.orders-table table,
+.product-table table,
+.author-publisher-list table,
+.customer-list table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: var(--card-bg-color);
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.orders-table th,
+.orders-table td,
+.product-table th,
+.product-table td,
+.author-publisher-list th,
+.author-publisher-list td,
+.customer-list th,
+.customer-list td {
+	padding: 12px;
+	text-align: left;
+	color: var(--text-color);
+}
+
+.orders-table th,
+.product-table th,
+.author-publisher-list th,
+.customer-list th {
+	background-color: var(--secondaryBg-color);
+	color: var(--primary-color);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.orders-table tr:nth-child(even),
+.product-table tr:nth-child(even),
+.author-publisher-list tr:nth-child(even),
+.customer-list tr:nth-child(even) {
+	background-color: var(--bg-color);
+}
+
+.orders-table td,
+.product-table td,
+.author-publisher-list td,
+.customer-list td {
+	color: var(--primary-color);
+}
+
+/* Action Buttons */
+
+.product-table .edit-btn,
+.product-table .delete-btn,
+.orders-table .view-btn,
+.orders-table .edit-btn,
+.orders-table .delete-btn,
+.author-publisher-list .edit-btn,
+.author-publisher-list .delete-btn,
+.customer-list .view-btn,
+.customer-list .edit-btn,
+.customer-list .delete-btn {
+	padding: 8px 15px;
+	border: none;
+	border-radius: 5px;
+	font-size: 0.9em;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	color: var(--bg-color);
+}
+
+.edit-btn {
+	background-color: var(--secondary-color);
+}
+
+.edit-btn:hover {
+	background-color: var(--highlight-color);
+}
+
+.delete-btn {
+	background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+	background-color: #c0392b;
+}
+
+/* --------------- Order Management -------------- */
+
+/* Order Filters */
+.order-filters {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+}
+
+.search-form input[type="text"] {
+	padding: 10px;
+	border: 1px solid var(--secondaryBg-color);
+	border-radius: 5px;
+	width: 200px;
+}
+
+.search-form button,
+.customer-search button {
+	background-color: var(--secondary-color);
+	color: var(--bg-color);
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.search-form button:hover,
+.customer-search button:hover {
+	background-color: var(--highlight-color);
+}
+
+.filter-options label {
+	font-weight: bold;
+	color: var(--header-color);
+	margin-right: 10px;
+}
+
+.filter-options select {
+	padding: 8px;
+	border: 1px solid var(--primary-color);
+	border-radius: 5px;
+	margin-right: 15px;
+}
+
+/* Orders Table */
+
+.orders-table .status {
+	padding: 5px 10px;
+	border-radius: 15px;
+	font-size: 0.9em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.status.pending {
+	background-color: #f9d57a;
+	color: #8a4f0d;
+}
+
+.status.shipped {
+	background-color: #9ad1c6;
+	color: #1a5852;
+}
+
+.status.delivered {
+	background-color: #a9d47b;
+	color: #4f7006;
+}
+
+.status.cancelled {
+	background-color: #f29c9c;
+	color: #7a1d1d;
+}
+
+/* Action Buttons */
+
+.view-btn {
+	background-color: var(--highlight-color);
+}
+
+.view-btn:hover {
+	background-color: #76513a;
+}
+
+/* -------------------------------------- Customers Dashboard -------------------------- */
+
+/* Search Bar */
+.customer-search {
+	margin-bottom: 20px;
+	display: flex;
+	gap: 10px;
+}
+
+.customer-search input[type="text"] {
+	padding: 10px;
+	border: 1px solid var(--secondaryBg-color);
+	border-radius: 5px;
+	width: 100%;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+	/* Stack sidebar and main content vertically */
+	body {
+		flex-direction: column;
+	}
+
+	.content {
+		margin-left: 0;
+		padding: 10px;
+	}
+
+	.summary-cards {
+		gap: 10px;
+	}
+
+	.quick-actions .action-buttons {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		left: -250px; /* Hide sidebar by default */
+		position: fixed;
+		height: 100vh;
+	}
+
+	.sidebar-toggle {
+		display: block; /* Show toggle button on mobile */
+	}
+
+	.product-form {
+		padding: 15px;
+	}
+	.product-form h2,
+	.product-table h2,
+	.author-publisher-list h2,
+	.customer-list h2 {
+		font-size: 1.2em;
+	}
+	.product-form button,
+	.author-publisher-form button {
+		font-size: 0.9em;
+		padding: 10px 15px;
+	}
+
+	.product-table,
+	.add-author-publisher,
+	.author-publisher-list,
+	.customer-list {
+		padding: 15px;
+	}
+
+	.orders-table th,
+	.orders-table td,
+	.product-table th,
+	.product-table td,
+	.author-publisher-list th,
+	.author-publisher-list td,
+	.customer-list th,
+	.customer-list td {
+		padding: 10px;
+	}
+
+	.product-table table,
+	.orders-table table,
+	.author-publisher-list table,
+	.customer-list table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	.order-filters {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.search-form input[type="text"] {
+		width: 100%;
+	}
+	.dashboardContainer {
+		display: block;
+	}
+}
+
+@media (max-width: 480px) {
+	.title-header h1 {
+		font-size: 1.5em;
+	}
+
+	.title-header p {
+		font-size: 1em;
+	}
+
+	.card h3 {
+		font-size: 1.2em;
+	}
+
+	.card p {
+		font-size: 1.4em;
+	}
+
+	.quick-actions button {
+		font-size: 0.9em;
+		padding: 10px;
+	}
+	.product-form h2 {
+		font-size: 1.2em;
+	}
+	.product-form button {
+		font-size: 0.8em;
+		padding: 8px 12px;
+	}
+
+	.orders-table th,
+	.orders-table td,
+	.product-table th,
+	.product-table td,
+	.author-publisher-list th,
+	.author-publisher-list td,
+	.customer-list th,
+	.customer-list td {
+		font-size: 0.8em;
+		padding: 8px;
+	}
+
+	.view-btn,
+	.edit-btn,
+	.delete-btn {
+		padding: 6px 10px;
+		font-size: 0.8em;
+	}
+
+	.order-filters {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.orders-table .status {
+		font-size: 0.8em;
+		padding: 4px 8px;
+	}
+
+	.author-publisher-form label,
+	.author-publisher-form input,
+	.author-publisher-form textarea,
+	.author-publisher-form select {
+		font-size: 0.9em;
+	}
+}
