@@ -16,34 +16,34 @@
 	</head>
 	<body class="homepage">
 		<header>
-			<!-- <nav>
-      <h1 class="logo">Book Nest</h1>
-      <ul class="nav-menu">
-        <li><a href="malak_homePage.html">Home</a></li>
-        <li><a href="malak_products.html">Products</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav> -->
 			<nav class="navbar" aria-label="Main Navigation">
 				<h1 class="logo">Book Nest</h1>
-				<ul class="nav-menu">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="malak_products.html">Products</a></li>
-					<!-- <li><a href="about.html">About Us</a></li> -->
-					<!-- <li><a href="contact.html">Contact</a></li> -->
-					<li id="cart-container">
-						<a href="malak_cart.html" id="cart-page-link">
-							<i class="bi bi-cart3">
+				<button
+					class="menu-toggle"
+					aria-label="Toggle Menu"
+					onclick="toggleMenu()"
+				>
+					☰
+				</button>
+				<div class="nav-container">
+					<ul class="nav-menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="malak_products.html">Products</a></li>
+						<li><a href="akbar_checkOut.html">CheckOut</a></li>
+						<li><a href="About.html">About Us</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li id="cart-container">
+							<a href="akbar_cart.html" id="cart-page-link">
+								<i class="bi bi-cart3"></i>
 								<span
 									id="cart-count"
 									class="badge rounded-pill bg-danger hidden"
 									>0</span
 								>
-							</i>
-						</a>
-					</li>
-				</ul>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</nav>
 		</header>
 
@@ -77,5 +77,6 @@
 			<p>&copy; 2024 Book Nest. All rights reserved.</p>
 		</footer>
 		<script src="js/malak_functionalities.js"></script>
+		<script src="js/nav.js"></script>
 	</body>
 </html>

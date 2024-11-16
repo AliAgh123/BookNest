@@ -1,0 +1,237 @@
+body {
+	font-family: "EB Garamond", serif;
+	background-color: #d8d2c2;
+	color: #4a4947;
+	margin: 0;
+	line-height: 1.6;
+}
+
+/* header {
+	background-color: #b17457;
+	padding: 1rem 0;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+} */
+
+/* .logo {
+	font-family: "UnifrakturCook", cursive;
+	font-size: 2.5rem;
+	color: #faf7f0;
+	margin: 0;
+}
+
+.nav-bar {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	margin: 0.5rem 0 1rem;
+}
+
+.nav-bar a {
+	text-decoration: none;
+	color: #faf7f0;
+	font-weight: bold;
+	font-size: 1rem;
+	transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+	color: #d8d2c2;
+} */
+
+.top-page-about {
+	position: relative;
+	width: 100%;
+	height: 60vh;
+	overflow: hidden;
+	margin-top: 0;
+}
+
+.background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("../images/Background.png");
+	background-size: cover;
+	background-position: center;
+	filter: blur(3px);
+	z-index: 0;
+}
+
+.overlay-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: #faf7f0;
+	/* z-index: 1; */
+	padding-top: 20vh;
+}
+
+.overlay-text h1 {
+	font-size: 3rem;
+	margin: 0;
+	font-weight: bold;
+}
+
+.overlay-text p {
+	font-size: 1.5rem;
+	margin-top: 0.5rem;
+}
+
+.about-details {
+	padding: 2rem 0;
+}
+
+footer {
+	background-color: #4a4947;
+	color: #faf7f0;
+	text-align: center;
+	padding: 1rem;
+	margin-top: 2rem;
+}
+
+footer p {
+	margin: 0;
+	font-size: 0.9rem;
+}
+
+main {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.filters {
+	background-color: #faf7f0;
+	border-left: 5px solid #b17457;
+	padding: 1rem;
+	margin-bottom: 2rem;
+}
+
+.filters h2 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	color: #4a4947;
+}
+
+.filter-group {
+	margin-bottom: 1rem;
+}
+
+.filter-group label {
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.book-list {
+	padding: 1rem 0;
+}
+
+.view-options {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.view-options h2 {
+	margin: 0;
+	font-weight: bold;
+	font-size: 3vw;
+}
+
+.view-options button {
+	background-color: #b17457;
+	color: #faf7f0;
+	border: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 0.5rem;
+	transition: background-color 0.3s ease;
+}
+
+.view-options button:hover {
+	background-color: #4a4947;
+}
+
+.book-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+}
+
+.book-item {
+	background-color: #faf7f0;
+	border: 1px solid #4a4947;
+	padding: 1.5rem;
+	text-align: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	border-radius: 1vw;
+}
+
+.book-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-item img {
+	width: 100%;
+	height: auto;
+	max-height: 300px;
+	object-fit: cover;
+	margin-bottom: 1rem;
+}
+
+.buy-btn {
+	width: 8vw;
+	height: 3vw;
+	border-radius: 1vw;
+	font-family: sans-serif;
+	font-size: small;
+	font-weight: bold;
+	background-color: #b17457f5;
+	color: white;
+}
+
+.book-item {
+	margin-bottom: 1vw;
+}
+
+.buy-btn:hover {
+	background-color: #b1745763;
+}
+
+.view-options {
+	margin: 3vw;
+}
+
+.view-options button {
+	border-radius: 1vw;
+}
+
+footer {
+	background-color: #4a4947;
+	color: #faf7f0;
+	text-align: center;
+	padding: 1rem;
+	margin-top: 2rem;
+}
+
+footer p {
+	margin: 0;
+	font-size: 0.9rem;
+}
+
+a,
+button {
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
