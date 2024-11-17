@@ -296,7 +296,7 @@ button#clear-cart:hover {
 
 @media (min-width: 768px) {
 	.menu-toggle {
-		display: none; /* Hide on larger screens */
+		display: none;
 	}
 	.nav-container {
 		position: static;
@@ -304,7 +304,7 @@ button#clear-cart:hover {
 		height: auto;
 		flex-direction: row;
 		background-color: transparent;
-		right: auto; /* Reset for larger screens */
+		right: auto;
 	}
 
 	.nav-menu {
@@ -314,6 +314,6 @@ button#clear-cart:hover {
 	}
 
 	.nav-container.open {
-		right: auto; /* No sliding effect on larger screens */
+		right: auto;
 	}
 }
