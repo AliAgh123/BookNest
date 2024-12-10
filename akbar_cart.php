@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h2 id="cart-heading">Your Shopping Cart</h2>
     <div id="cart-items-container">
       <?php if (empty($_SESSION['cart'])): ?>
-        <p>Your cart is empty.</p>
+        <!-- <p>Your cart is empty.</p> -->
       <?php else: ?>
         <ul>
           <?php foreach ($_SESSION['cart'] as $item): ?>
@@ -118,10 +118,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
   </section>
 </main>
-<footer>
-  <p>&copy; 2024 Book Nest. All rights reserved.</p>
-</footer>
-<script src="malak_functionalities.js"></script>
+<?php include "footer.php" ?>
+<script src="js/malak_functionalities.js"></script>
 </body>
 </html>
 

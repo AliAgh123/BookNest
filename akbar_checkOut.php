@@ -112,10 +112,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </section>
 </main>
 
-<footer>
-  <p>&copy; 2024 Book Nest. All rights reserved.</p>
-</footer>
-<script src="malak_functionalities.js"></script>
+<?php include "footer.php" ?>
+<script src="js/malak_functionalities.js"></script>
 </body>
 </html>
 

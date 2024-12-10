@@ -90,10 +90,7 @@ $result = mysqli_query($conn, $query);
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Book Nest. All rights reserved.</p>
-    </footer>
-
+    <? include "footer.php" ?>
     <script>
         function confirmDelete(id) {
             if (confirm('Are you sure you want to delete this record?')) {

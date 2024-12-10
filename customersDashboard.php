@@ -104,9 +104,7 @@ $result = mysqli_query($conn, $query);
             </div>
         </div>
 
-        <footer>
-            <p>&copy; 2024 Book Nest. All rights reserved.</p>
-        </footer>
+        <?php include "footer.php" ?>
         <script src="js/dashboard.js"></script>
         <script src="js/nav.js"></script>
     </body>

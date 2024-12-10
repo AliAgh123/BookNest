@@ -66,9 +66,7 @@ while ($row = $result->fetch_assoc()) {
 			</section>
 		</main>
 
-		<footer>
-			<p>&copy; 2024 Book Nest. All rights reserved.</p>
-		</footer>
+	    <?php include "footer.php" ?>
 		<script src="js/malak_functionalities.js"></script>
 		<script src="js/nav.js"></script>
 	</body>
