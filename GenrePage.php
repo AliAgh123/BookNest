@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'connectDb.php'; 
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
@@ -28,12 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     exit;
 }
 
-$books = [
-    ["title" => "The Great Gatsby", "price" => 14.99, "author" => "F. Scott Fitzgerald"],
-    ["title" => "To Kill a Mockingbird", "price" => 12.99, "author" => "Harper Lee"],
-    ["title" => "1984", "price" => 10.99, "author" => "George Orwell"],
-    ["title" => "Pride and Prejudice", "price" => 9.99, "author" => "Jane Austen"]
-];
+$query = "SELECT title, price, author FROM books";
+$result = $conn->query($query);
+
+if ($result === false) {
+    die("Error fetching books: " . $conn->error);
+}
+
+$books = [];
+while ($row = $result->fetch_assoc()) {
+    $books[] = $row;
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,24 +54,10 @@ $books = [
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar" aria-label="Main Navigation">
-      <h1 class="logo">Book Nest</h1>
-      <ul class="nav-menu">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="about.php">About</a></li>
-        <li id="cart-container">
-          <a href="akbar_cart.php" id="cart-page-link">
-            <i class="bi bi-cart3">
-              <span id="cart-count" class="badge rounded-pill bg-danger">
-                <?php echo count($_SESSION['cart']); ?>
-              </span>
-            </i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+
+<?php
+include "header.php"
+?>
 
   <main>
     <section class="book-list">

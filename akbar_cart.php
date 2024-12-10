@@ -34,26 +34,9 @@
   }
   ?>
 
-  <header>
-    <nav aria-label="Main Navigation">
-      <h1 class="logo">Book Nest</h1>
-      <ul class="nav-menu">
-        <li><a href="malak_homePage.php">Home</a></li>
-        <li><a href="malak_products.php">Products</a></li>
-        <li><a href="akbar_checkOut.php">CheckOut</a></li>
-        <li><a href="about.php">About Us</a></li> 
-        <li><a href="contact.php">Contact</a></li>
-        <li id="cart-container">
-          <a href="akbar_cart.php" id="cart-page-link">
-            <i class="bi bi-cart3"></i>
-            <span id="cart-count" class="badge rounded-pill bg-danger">
-              <?php echo count($_SESSION['cart']); ?>
-            </span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<?php
+include "header.php"
+?>
 
   <main>
     <section class="cart-section" aria-labelledby="cart-heading">

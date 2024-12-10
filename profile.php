@@ -69,10 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <body>
         <?php include 'header.php'; ?>
 
-        
 
         <div class="profile-container">
-            <!-- Profile Sidebar -->
+            
             <div class="profile-sidebar">
                 <div class="profile-picture">
                     <img src="<?php echo htmlspecialchars($user['profile_image']); ?>" alt="Profile Picture" />
@@ -80,13 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h2><?php echo htmlspecialchars($user['full_name']); ?></h2>
                 <p class="location"><?php echo htmlspecialchars($user['address']); ?></p>
 
-                <!-- Bio -->
+                
                 <div class="bio">
                     <p><?php echo htmlspecialchars($user['bio'] ?? "No bio available."); ?></p>
                 </div>
             </div>
 
-            <!-- Profile Details & Edit Form -->
+           
             <div class="profile-details">
                 <div class="basic-info">
                 <?php if (!empty($success)) echo "<p style='color:green;'>$success</p>"; ?>
