@@ -3,37 +3,36 @@ session_start();
 
 require 'connectDb.php';
 
-// Fetch recent orders
 $recent_orders_query = "SELECT orders.order_id, orders.order_date, users.full_name, orders.status
                         FROM orders
                         JOIN users ON orders.user_id = users.id
                         ORDER BY orders.order_date DESC LIMIT 5";
 $recent_orders_result = $conn->query($recent_orders_query);
 
-// Fetch recent customers
+
 $recent_customers_query = "SELECT id, full_name, email 
                            FROM users WHERE user_type = 'reader' LIMIT 5";
 $recent_customers_result = $conn->query($recent_customers_query);
 
-// Fetch recent products
+
 $recent_products_query = "SELECT id, title, genre, price, format FROM books LIMIT 5";
 $recent_products_result = $conn->query($recent_products_query);
 
-// Fetch total sales
+
 $total_sales_query = "SELECT SUM(total_amount) AS total_sales 
                       FROM orders
                       WHERE orders.status IN ('shipped', 'delivered')";
 $total_sales_result = $conn->query($total_sales_query);
-$total_sales = 0; // Default value
+$total_sales = 0; 
 if ($total_sales_result) {
     $row = $total_sales_result->fetch_assoc();
     $total_sales = $row['total_sales'] ?? 0;
 }
 
-// Fetch total orders
+
 $total_orders_query = "SELECT COUNT(*) AS total_orders FROM orders";
 $total_orders_result = $conn->query($total_orders_query);
-$total_orders = 0; // Default value
+$total_orders = 0; 
 if ($total_orders_result) {
     $row = $total_orders_result->fetch_assoc();
     $total_orders = $row['total_orders'] ?? 0;

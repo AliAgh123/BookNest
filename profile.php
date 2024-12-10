@@ -122,9 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </select>
 
                         <button type="submit" class="save-btn">Save Changes</button>
-                        <a href="./logout.php">
-                            <button class="save-btn">Log out</button>
-                        </a>
+                        
                         
                     </form>
                 </div>

@@ -105,17 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" id="clear-cart">Clear Cart</button>
       </form>
     </div>
-    <div class="checkout-section">
-      <h3>Checkout</h3>
-      <form method="POST">
-        <input type="hidden" name="action" value="checkout">
-        <label for="shipping_address">Shipping Address:</label>
-        <input type="text" id="shipping_address" name="shipping_address" required>
-        <label for="billing_address">Billing Address:</label>
-        <input type="text" id="billing_address" name="billing_address" required>
-        <button type="submit" id="checkout-cart">Place Order</button>
-      </form>
-    </div>
+    
   </section>
 </main>
 <?php include "footer.php" ?>

@@ -12,53 +12,58 @@ foreach ($_SESSION['cart'] as $item) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     if (!isset($_SESSION['user_id'])) {
-        echo "<p>You must be logged in to place an order.</p>";
-        exit;
-    }
+        $message = "<p>You must be logged in to place an order.</p>";
+    } else {
+        $user_id = $_SESSION['user_id'];
+        $shipping_address = htmlspecialchars($_POST['shipping_address']);
+        $billing_address = htmlspecialchars($_POST['billing_address']);
 
-    $user_id = $_SESSION['user_id'];
-    $shipping_address = htmlspecialchars($_POST['shipping_address']);
-    $billing_address = htmlspecialchars($_POST['billing_address']);
 
-    if (empty($_SESSION['cart'])) {
-        echo "<p>Your cart is empty. Add items to checkout.</p>";
-        exit;
-    }
+        if (empty($_SESSION['cart'])) {
+            $message = "<p>Your cart is empty. Add items to checkout.</p>";
+        } else {
 
-    $stmt = $conn->prepare("
-        INSERT INTO orders (user_id, total_amount, shipping_address, billing_address, status)
-        VALUES (?, ?, ?, ?, 'pending')
-    ");
-    $stmt->bind_param("idss", $user_id, $totalAmount, $shipping_address, $billing_address);
-
-    if ($stmt->execute()) {
-        $order_id = $stmt->insert_id; 
-
-        foreach ($_SESSION['cart'] as $item) {
-            $book_id = $item['book_id'];
-            $quantity = $item['quantity'];
-            $price_at_time = $item['price'];
-
-            $item_stmt = $conn->prepare("
-                INSERT INTO order_items (order_id, book_id, quantity, price_at_time)
-                VALUES (?, ?, ?, ?)
+            $stmt = $conn->prepare("
+                INSERT INTO orders (user_id, total_amount, shipping_address, billing_address, status)
+                VALUES (?, ?, ?, ?, 'pending')
             ");
-            $item_stmt->bind_param("iiid", $order_id, $book_id, $quantity, $price_at_time);
+            $stmt->bind_param("idss", $user_id, $totalAmount, $shipping_address, $billing_address);
 
-            if (!$item_stmt->execute()) {
-                echo "<p>Error saving item: " . $item_stmt->error . "</p>";
-                exit;
+            if ($stmt->execute()) {
+                $order_id = $stmt->insert_id; 
+
+
+                foreach ($_SESSION['cart'] as $book_id => $item) {
+                    $quantity = $item['quantity'];
+                    $price_at_time = $item['price'];
+
+                    $item_stmt = $conn->prepare("
+                        INSERT INTO order_items (order_id, book_id, quantity, price_at_time)
+                        VALUES (?, ?, ?, ?)
+                    ");
+                    $item_stmt->bind_param("iiid", $order_id, $book_id, $quantity, $price_at_time);
+
+                    if (!$item_stmt->execute()) {
+                        $message = "<p>Error saving item: " . $item_stmt->error . "</p>";
+                        break;
+                    }
+                }
+
+                // Clear the cart after successful order placement
+                if (!isset($message)) {
+                    $_SESSION['cart'] = [];
+                    $message = "<p>Thank you! Your order has been placed successfully.</p>";
+                }
+            } else {
+                $message = "<p>Sorry, there was an issue processing your order. Please try again.</p>";
             }
         }
-
-        $_SESSION['cart'] = [];
-        $message = "Thank you! Your order has been placed successfully.";
-    } else {
-        $message = "Sorry, there was an issue processing your order. Please try again.";
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,6 +80,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <main class="container">
   <section class="checkout-section">
     <h2>Checkout</h2>
+
+    <!-- Display cart summary -->
     <div id="cart-summary">
       <h3>Your Cart</h3>
       <?php if (empty($_SESSION['cart'])): ?>
@@ -93,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <?php endif; ?>
     </div>
 
+    <!-- Checkout form -->
     <?php if (!empty($_SESSION['cart'])): ?>
       <form id="checkout-form" method="POST">
         <h3>Shipping and Billing Details</h3>
@@ -106,8 +114,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </form>
     <?php endif; ?>
 
+    <!-- Display success or error message -->
     <?php if (isset($message)): ?>
-      <p><?php echo $message; ?></p>
+      <div class="message">
+        <?php echo $message; ?>
+      </div>
     <?php endif; ?>
   </section>
 </main>
@@ -116,4 +127,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="js/malak_functionalities.js"></script>
 </body>
 </html>
-

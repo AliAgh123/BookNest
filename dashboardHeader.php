@@ -24,18 +24,37 @@
                 <li><a href="akbar_checkOut.php">CheckOut</a></li>
                 <li><a href="About.php">About Us</a></li>
                 <li><a href="profile.php">Profile</a></li>
-                <li><a href="dashboardHome.php">Dashboard</a></li>
-                <li id="cart-container">
-                    <a href="akbar_cart.php" id="cart-page-link">
-                        <i class="bi bi-cart3"></i>
-                        <span
-                            id="cart-count"
-                            class="badge rounded-pill bg-danger hidden"
-                            >0</span
-                        >
-                    </a>
-                </li>
+                <?php if (isset($_SESSION['user_id'])):?>
+                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']):?>
+                    <li><a href="dashboardHome.php">Dashboard</a></li>
+                    <?php endif; ?>
+                    <li id="cart-container">
+                        <a href="akbar_cart.php" id="cart-page-link">
+                            <i class="bi bi-cart3"></i>
+                            <span
+                                id="cart-count"
+                                class="badge rounded-pill bg-danger hidden"
+                                >0</span
+                            >
+                        </a>
+                    </li>
+                    <li>
+                        <a href="logout.php">Log out</a>
+                    </li>
+                    
+                <?php else:  ?>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="signup.php">Sign Up</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
 </header>
+<?php 
+session_start();
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+?>
+

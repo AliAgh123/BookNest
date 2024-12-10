@@ -4,7 +4,7 @@ require 'connectDb.php';
 
 $error = ''; 
 
-
+    
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
@@ -14,6 +14,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error = "Please enter both email and password.";
     } else {
 
+        $adminQuery = "SELECT * FROM admins WHERE email = ?";
+        $stmt = $conn->prepare($adminQuery);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $adminResult = $stmt->get_result();
+
+
+        if ($adminRow = $adminResult->fetch_assoc()) {
+          // if (password_verify($password, $adminRow['password'])) { // if with encryption
+          if ($password === $adminRow['password']) {
+              $_SESSION['user_id'] = $adminRow['id'];
+              $_SESSION['is_admin'] = true; 
+  
+              header("Location: dashboardHome.php"); 
+              exit();
+          } else {
+              $error = "Invalid password!";
+          }
+      } else {
         $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
         $stmt->bind_param("s", $email); 
         $stmt->execute(); 
@@ -26,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (password_verify($password, $user['password'])) {
 
                 $_SESSION['user_id'] = $user['id'];
-
+                $_SESSION['is_admin'] = false; 
                 header("Location: profile.php");
                 exit();
             } else {
@@ -35,6 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $error = "No user found with that email address.";
         }
+      }
+      
     }
 }
 ?>

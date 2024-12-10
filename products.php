@@ -10,12 +10,14 @@
   <!-- Add Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body style="background: url('https://c4.wallpaperflare.com/wallpaper/526/8/1002/library-interior-interior-design-books-wallpaper-preview.jpg')
+		no-repeat center center fixed;
+	background-size: cover;">
 <?php
   session_start();
   require 'connectDb.php'; 
-
-  $query = "SELECT books.title, books.price, books.description, books.cover_image, users.full_name  AS author_name 
+  
+  $query = "SELECT books.id, books.title, books.price, books.description, books.cover_image, users.full_name  AS author_name 
             FROM books
             JOIN users ON books.author_id = users.id"; 
   $result = $conn->query($query);
@@ -49,7 +51,10 @@ include "header.php"
               echo "<p class='card-text'>\${$product['price']}</p>";
               echo "<p class='card-text'>by {$product['author_name']}</p>";
               echo "<p class='card-text'>{$product['description']}</p>";
-              echo "<button type='button' class='btn ' aria-label='Add {$product['title']} to Cart'>Add to Cart</button>";
+
+              echo "<button type='button' class='btn' onclick=\"addToCart({$product['id']}, '{$product['title']}', {$product['price']})\">
+        Add to Cart
+      </button>";
               echo "</div>";
               echo "</div>"; 
               echo "</div>";
