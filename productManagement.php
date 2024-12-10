@@ -12,6 +12,7 @@ if (isset($_GET['delete_id'])) {
     $delete_query = "DELETE FROM books WHERE id = $delete_id";
     if (mysqli_query($conn, $delete_query)) {
         $success = "Product deleted successfully!";
+
     } else {
         $error = "Error deleting product: " . mysqli_error($conn);
     }
@@ -26,6 +27,7 @@ if (isset($_GET['edit_id'])) {
     $book = mysqli_fetch_assoc($book_result);
 
     $selected_author_id = $book['author_id'];
+    header("Location: productManagement.php"); 
 }
 
 
