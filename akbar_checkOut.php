@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'connectDb.php'; // Include the database connection file
+require 'connectDb.php'; 
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
@@ -26,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Insert the order into the orders table
     $stmt = $conn->prepare("
         INSERT INTO orders (user_id, total_amount, shipping_address, billing_address, status)
         VALUES (?, ?, ?, ?, 'pending')
@@ -34,11 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("idss", $user_id, $totalAmount, $shipping_address, $billing_address);
 
     if ($stmt->execute()) {
-        $order_id = $stmt->insert_id; // Get the ID of the newly created order
+        $order_id = $stmt->insert_id; 
 
-        // Insert each cart item into the order_items table
         foreach ($_SESSION['cart'] as $item) {
-            $book_id = $item['book_id']; // Assuming `book_id` is part of the cart item
+            $book_id = $item['book_id'];
             $quantity = $item['quantity'];
             $price_at_time = $item['price'];
 
@@ -54,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        // Clear the cart after a successful order
         $_SESSION['cart'] = [];
         $message = "Thank you! Your order has been placed successfully.";
     } else {
