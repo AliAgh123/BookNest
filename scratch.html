@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Book Nest - Checkout</title>
+		<link rel="stylesheet" href="style/akbar_styles.css" />
+		<link rel="stylesheet" href="style/malak_styles.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Old+London&family=EB+Garamond:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="js/checkout.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar" aria-label="Main Navigation">
+				<h1 class="logo">Book Nest</h1>
+				<button
+					class="menu-toggle"
+					aria-label="Toggle Menu"
+					onclick="toggleMenu()"
+				>
+					☰
+				</button>
+				<div class="nav-container">
+					<ul class="nav-menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="malak_products.html">Products</a></li>
+						<li><a href="akbar_checkOut.html">CheckOut</a></li>
+						<li><a href="About.html">About Us</a></li>
+						<li><a href="profile.html">Profile</a></li>
+						<li><a href="dashboardHome.html">Dashboard</a></li>
+						<li id="cart-container">
+							<a href="akbar_cart.html" id="cart-page-link">
+								<i class="bi bi-cart3"></i>
+								<span
+									id="cart-count"
+									class="badge rounded-pill bg-danger hidden"
+									>0</span
+								>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<main class="container">
+			<section class="checkout-section">
+				<h2>Checkout</h2>
+				<div id="cart-summary">
+					<h3>Your Cart</h3>
+					<div id="cart-items"></div>
+					<p id="total-amount"></p>
+				</div>
+
+				<form id="checkout-form">
+					<h3>Billing Details</h3>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" required />
+
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required />
+
+					<label for="address">Address:</label>
+					<textarea id="address" name="address" required></textarea>
+
+					<button type="submit" id="place-order">Place Order</button>
+				</form>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2024 Book Nest. All rights reserved.</p>
+		</footer>
+		<script src="js/malak_functionalities.js"></script>
+		<script src="js/nav.js"></script>
+	</body>
+</html>

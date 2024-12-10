@@ -32,7 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Nest - Checkout</title>
-  <link rel="stylesheet" href="akbar_styles.css">
+  <link rel="stylesheet" href="style/akbar_styles.css">
+  <link rel="stylesheet" href="style/malak_styles.css" />
+
   <link href="https://fonts.googleapis.com/css2?family=Old+London&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
