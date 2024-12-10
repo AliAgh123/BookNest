@@ -131,14 +131,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       
       <form action="signup.php" method="POST" class="signup-form">
         <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+          <label for="full_name">Full Name *</label>
+          <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
 
-          <label for="email">Email Address</label>
+          <label for="email">Email Address *</label>
           <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-          <label for="password">Password</label>
+          
+          <label for="password">Password *</label>
           <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+          <label for="confirm_password">Confirm Password *</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
 
           <label for="phone">Phone</label>
           <input type="text" id="phone" name="phone"><br><br>
@@ -156,8 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <label for="bio">Bio</label>
           <textarea id="bio" name="bio" rows="4" cols="40"></textarea><br><br>
 
-          <label for="confirm-password">Confirm Password</label>
-          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+          
         </div>
 
         <button type="submit" class="btn-login">Sign Up</button>
@@ -166,6 +168,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <p class="toggle-text">Already have an account? <a href="login.php">Log in</a></p>
     </div>
   </div>
-
+  <?php include "footer.php" ?>
 </body>
 </html>

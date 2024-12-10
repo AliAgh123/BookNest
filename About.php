@@ -71,8 +71,8 @@ if (!isset($_SESSION['cart'])) {
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2024 Book Nest. All rights reserved.</p>
-  </footer>
+  <?php
+  include "footer.php"
+  ?>
 </body>
 </html>
