@@ -86,7 +86,7 @@ body {
 	background-color: var(--secondary-color);
 }
 
-.social-links p {
+.bio p {
 	font-size: 0.9em;
 	color: var(--primary-color);
 	margin-top: 10px;
