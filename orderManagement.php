@@ -40,7 +40,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="style/malak_styles.css" />
 </head>
 <body class="dashboardBody">
-    <?php include "header.php" ?>
+    <?php include "dashboardHeader.php" ?>
     <div class="dashboardContainer">
         <aside class="sidebar" id="sidebar">
             <h2>Admin Dashboard</h2>
@@ -122,7 +122,6 @@ $result = $conn->query($sql);
     </div>
 	<?php include "footer.php" ?>
     <script src="js/dashboard.js"></script>
-    <script src="js/nav.js"></script>
 </body>
 </html>
 

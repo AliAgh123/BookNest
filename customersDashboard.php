@@ -38,7 +38,7 @@ $result = mysqli_query($conn, $query);
     </head>
     <body class="dashboardBody">
         <!-- Navbar -->
-        <?php include 'header.php' ?>
+        <?php include 'dashboardHeader.php' ?>
 
         <div class="dashboardContainer">
             <!-- Sidebar -->
