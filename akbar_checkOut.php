@@ -1,29 +1,25 @@
 <?php
 session_start();
 
-// Initialize cart if it doesn't exist
+
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-// Calculate total amount
 $totalAmount = 0;
 foreach ($_SESSION['cart'] as $item) {
     $totalAmount += $item['price'] * $item['quantity'];
 }
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $address = htmlspecialchars($_POST['address']);
 
-    // Simulate order processing (e.g., store order in database or send confirmation email)
-    // In a real application, insert order data into the database and send an email
-    $orderSuccess = true; // Simulate successful order placement
+    $orderSuccess = true; 
 
     if ($orderSuccess) {
-        $_SESSION['cart'] = []; // Clear the cart after successful order
+        $_SESSION['cart'] = []; 
         $message = "Thank you, $name! Your order has been placed successfully.";
     } else {
         $message = "Sorry, there was an issue processing your order. Please try again.";

@@ -11,20 +11,21 @@
 <body>
 <?php
   
-  $products = [
-      ["title" => "Atomic Habits", "price" => 13.97, "author" => "James Clear"],
-      ["title" => "Iron Flame (The Empyrean, 2)", "price" => 10.98, "author" => "Rebecca Yarros"],
-      ["title" => "The 48 Laws of Power", "price" => 18.00, "author" => "Robert Greene"],
-      ["title" => "The Psychology of Money", "price" => 9.03, "author" => "Morgen Housel"],
-      ["title" => "Stop Overthinking", "price" => 6.96, "author" => "Nick Trenton"],
-      ["title" => "Don't Believe Everything You Think", "price" => 7.99, "author" => "Joseph Nguyen"],
-      ["title" => "It Starts with Us", "price" => 20.54, "author" => "Colleen Hoover"],
-      ["title" => "It Ends with Us", "price" => 21.78, "author" => "Colleen Hoover"],
-      ["title" => "The Housemaid", "price" => 7.05, "author" => "Freda McFadden"],
-      ["title" => "The Seven Husbands of Evelyn Hugo", "price" => 16.92, "author" => "Taylor Jenkins Reid"],
-      ["title" => "Interesting Facts For Curious Minds", "price" => 10.59, "author" => "Jordan Moore"],
-      ["title" => "I Love You to the Moon and Back", "price" => 5.79, "author" => "Amelia Hepworth"]
-  ];
+  session_start();
+  require 'connectDb.php'; 
+  
+
+  $query = "SELECT title, price, author FROM products";
+  $result = $conn->query($query);
+  
+  if ($result === false) {
+      die("Error fetching products: " . $conn->error);
+  }
+  
+  $products = [];
+  while ($row = $result->fetch_assoc()) {
+      $products[] = $row;
+  }
   ?>
   
   <header>

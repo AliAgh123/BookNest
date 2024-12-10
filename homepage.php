@@ -11,20 +11,20 @@
 <body>
   <?php
   
-  $books = [
-      ["title" => "The Great Gatsby", "price" => 8.43],
-      ["title" => "I Wrote a Book About You", "price" => 10.79],
-      ["title" => "We Were Liars", "price" => 15.09],
-  ];
+  session_start();
+  require 'connectDb.php'; 
 
-  echo "<div class='php-section'>";
-  echo "<h2>PHP-Generated Content:</h2>";
-  echo "<ul>";
-  foreach ($books as $book) {
-      echo "<li>{$book['title']} - \$" . number_format($book['price'], 2) . "</li>";
+  $query = "SELECT title, price FROM books LIMIT 3"; 
+  $result = $conn->query($query);
+  
+  if ($result === false) {
+      die("Error fetching books: " . $conn->error);
   }
-  echo "</ul>";
-  echo "</div>";
+  
+  $books = [];
+  while ($row = $result->fetch_assoc()) {
+      $books[] = $row;
+  }
   ?>
   
   <header>
