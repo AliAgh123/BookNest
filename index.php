@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Nest - Home</title>
-  <link rel="stylesheet" href="malak_styles.css">
+  <link rel="stylesheet" href="style/malak_styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Old+London&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
@@ -27,24 +27,9 @@
   }
   ?>
   
-  <header>
-    <nav aria-label="Main Navigation">
-      <h1 class="logo">Book Nest</h1>
-      <ul class="nav-menu">
-        <li><a href="malak_homePage.html">Home</a></li>
-        <li><a href="malak_products.html">Products</a></li>
-        <li><a href="About.html">About Us</a></li> 
-        
-        <li id="cart-container">
-          <a href="akbar_cart.html" id="cart-page-link">
-            <i class="bi bi-cart3">
-            <span id="cart-count" class="badge rounded-pill bg-danger hidden">0</span>
-            </i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <?php 
+    include "connectDb.php";
+  ?>
   
   <main>
     <section class="hero">
