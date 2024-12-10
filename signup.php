@@ -104,3 +104,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </body>
 </html>
+
+<!-- added part -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Book Nest</title>
+  <link rel="stylesheet" href="signup_styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Old+London&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: url('library-background.jpg') center/cover no-repeat;">
+
+  <div class="overlay"></div>
+
+  <div class="signup-container">
+    <h1 class="signup-title">Create Your Account</h1>
+    <p class="signup-subtitle">Join Book Nest and explore the world of books.</p>
+
+    <form action="signup.php" method="POST" class="signup-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+      </div>
+      <button type="submit" class="signup-btn">Sign Up</button>
+    </form>
+
+    <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+
+</body>
+</html>
