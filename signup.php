@@ -67,7 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
     <?php if (!empty($success)) echo "<p style='color:green;'>$success</p>"; ?>
 
-    <!-- Signup Form -->
     <form action="signup.php" method="POST">
         <label for="full_name">Full Name *</label>
         <input type="text" id="full_name" name="full_name" required><br><br>
