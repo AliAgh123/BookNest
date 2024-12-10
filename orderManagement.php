@@ -105,8 +105,6 @@ $result = $conn->query($sql);
                                         <td>$<?php echo number_format($row['total_amount'], 2); ?></td>
                                         <td><span class="status <?php echo $row['status']; ?>"><?php echo ucfirst($row['status']); ?></span></td>
                                         <td>
-                                            <button class="view-btn">View</button>
-                                            <button class="edit-btn">Edit</button>
                                             <button class="delete-btn">Delete</button>
                                         </td>
                                     </tr>

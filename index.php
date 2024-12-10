@@ -13,6 +13,29 @@
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
 			rel="stylesheet"
 		/>
+    <?php
+session_start();
+require 'connectDb.php'; 
+
+// Modify the query to join the books table with the authors table
+$query = "SELECT books.title, books.price, books.description, users.full_name AS author_name 
+          FROM books
+          JOIN users ON books.author_id = users.id
+          LIMIT 3"; 
+
+$result = $conn->query($query);
+
+if ($result === false) {
+    die("Error fetching books: " . $conn->error);
+}
+
+$books = [];
+while ($row = $result->fetch_assoc()) {
+    $books[] = $row;
+}
+?>
+
+
 	</head>
 	<body class="homepage">
   <?php 
@@ -32,18 +55,14 @@
 
 			<section class="product-list">
 				<h2>Featured Books</h2>
-				<div class="product-item">
-					<h3>The Great Gatsby</h3>
-					<p>$8.43</p>
-					<p>A classic novel by F. Scott Fitzgerald.</p>
-					<button>Buy Now</button>
-				</div>
-				<div class="product-item">
-					<h3>I Wrote a Book About You</h3>
-					<p>$10.79</p>
-					<p>A fun, fill-in-the-blank book by M. H. Clark.</p>
-					<button>Buy Now</button>
-				</div>
+				
+        <?php foreach ($books as $book): ?>
+          <div class="product-item">
+              <h3><?php echo $book['title']; ?></h3>
+              <p>$<?php echo $book['price']; ?></p>
+              <p><?php echo $book['description']; ?> by <?php echo $book['author_name']; ?></p>
+          </div>
+      <?php endforeach; ?>
 			</section>
 		</main>
 

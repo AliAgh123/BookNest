@@ -44,7 +44,7 @@
             <div class="nav-container">
                 <ul class="nav-menu">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="malak_products.php">Products</a></li>
+                    <li><a href="products.php">Products</a></li>
                     <li><a href="akbar_checkOut.php">CheckOut</a></li>
                     <li><a href="About.php">About Us</a></li>
                     <?php if (isset($_SESSION['user_id'])):?>

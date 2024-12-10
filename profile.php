@@ -126,6 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
         </div>
+        <?php include "footer.php" ?>
         <script src="js/nav.js"></script>
     </body>
 </html>

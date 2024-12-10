@@ -104,9 +104,7 @@ $books_result = mysqli_query($conn, $books_query);
     <link rel="stylesheet" href="style/malak_styles.css" />
 </head>
 <body class="dashboardBody">
-    <header>
         <?php include 'header.php'; ?>
-    </header>
 
     <div class="dashboardContainer">
         <aside class="sidebar" id="sidebar">

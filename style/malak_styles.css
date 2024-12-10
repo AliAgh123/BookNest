@@ -131,6 +131,55 @@
 	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+.card {
+	border-radius: 10px;
+	overflow: hidden;
+	transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+	height: 250px;
+	object-fit: cover;
+}
+
+.card-body {
+	background-color: #fff;
+	padding: 1.5rem;
+}
+
+.card-body button {
+	background-color: #b17457;
+	border-color: #b17457;
+}
+
+.card-title {
+	font-size: 1.5rem;
+	color: #b17457;
+	font-weight: bold;
+}
+
+.card-text {
+	font-size: 1rem;
+	color: #666;
+	margin-bottom: 1rem;
+}
+
+.btn-primary {
+	background-color: #b17457;
+	border-color: #b17457;
+	font-size: 1rem;
+}
+
+.btn-primary:hover {
+	background-color: #f78b4a;
+	border-color: #f78b4a;
+}
+
 .product-list {
 	max-width: 1200px;
 	margin: 2rem auto;

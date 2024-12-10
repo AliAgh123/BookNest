@@ -115,12 +115,16 @@
 					<section class="quick-actions">
 						<h2>Quick Actions</h2>
 						<div class="action-buttons">
-							<button onclick="window.location.href='#add-product'">
-								Add New Product
-							</button>
-							<button onclick="window.location.href='#manage-orders'">
-								Process Orders
-							</button>
+							<a href="./productManagement.php">
+								<button>
+									Add New Product
+								</button>
+							</a>
+							<a href="./orderManagement.php">
+								<button>
+									Process Orders
+								</button>
+							</a>
 						</div>
 					</section>
 				</main>
