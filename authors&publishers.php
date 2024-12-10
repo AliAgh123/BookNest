@@ -31,7 +31,7 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="style/malak_styles.css" />
 </head>
 <body class="dashboardBody">
-    <?php include 'header.php'?>
+    <?php include 'dashboardHeader.php'?>
 
     <div class="dashboardContainer">
         <aside class="sidebar" id="sidebar">
