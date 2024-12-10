@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'connectDb.php'; 
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
@@ -28,12 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     exit;
 }
 
-$books = [
-    ["title" => "The Great Gatsby", "price" => 14.99, "author" => "F. Scott Fitzgerald"],
-    ["title" => "To Kill a Mockingbird", "price" => 12.99, "author" => "Harper Lee"],
-    ["title" => "1984", "price" => 10.99, "author" => "George Orwell"],
-    ["title" => "Pride and Prejudice", "price" => 9.99, "author" => "Jane Austen"]
-];
+$query = "SELECT title, price, author FROM books";
+$result = $conn->query($query);
+
+if ($result === false) {
+    die("Error fetching books: " . $conn->error);
+}
+
+$books = [];
+while ($row = $result->fetch_assoc()) {
+    $books[] = $row;
+}
 ?>
 
 <!DOCTYPE html>
