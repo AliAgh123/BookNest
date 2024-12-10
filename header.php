@@ -1,4 +1,3 @@
-<?php include 'connectDb.php'; ?>
 <header>
     <nav class="navbar" aria-label="Main Navigation">
         <h1 class="logo">Book Nest</h1>
