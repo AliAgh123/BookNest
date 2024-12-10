@@ -36,18 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link href="https://fonts.googleapis.com/css2?family=Old+London&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1 class="logo">Book Nest</h1>
-      <ul class="nav-menu">
-        <li><a href="malak_homePage.php">Home</a></li>
-        <li><a href="malak_products.php">Products</a></li>
-        <li><a href="akbar_checkOut.php">CheckOut</a></li>
-        <li><a href="about.php">About Us</a></li>
-        <li><a href="contact.php">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<?php
+include "header.php"
+?>
 
   <main class="container">
     <section class="checkout-section">

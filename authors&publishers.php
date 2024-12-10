@@ -45,10 +45,10 @@ $result = mysqli_query($conn, $query);
             </nav>
         </aside>
 
-        <!-- Main Content -->
+        
         <div class="rightSideDashboard">
             <div class="content">
-                <!-- Page Header -->
+              
                 <header class="title-header">
                     <h1>Authors & Publishers Management</h1>
                     <p>Manage and view all authors and publishers registered on the platform.</p>
@@ -58,7 +58,7 @@ $result = mysqli_query($conn, $query);
                 <?php if (isset($success)) echo "<p style='color:green;'>$success</p>"; ?>
                 <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
 
-                <!-- Table of Authors and Publishers -->
+                
                 <section class="author-publisher-list">
                     <h2>Authors and Publishers List</h2>
                     <table>
