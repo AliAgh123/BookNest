@@ -38,37 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/login.css">
-    <title>Login</title>
-</head>
-<body>
-
-    <h2>Login</h2>
-    
-
-    <?php if (!empty($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
-
-
-    <form action="login.php" method="POST">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required><br><br>
-
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required><br><br>
-
-        <button type="submit">Login</button>
-    </form>
-
-    <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
-
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,14 +46,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <title>Login | Book Nest</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Old+London&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style/login.css">
+  <link rel="stylesheet" href="style/malak_styles.css">
 </head>
-<body style="background: url('library-background.jpg') center/cover no-repeat;">
+<body style="background: url('https://c4.wallpaperflare.com/wallpaper/526/8/1002/library-interior-interior-design-books-wallpaper-preview.jpg') center/cover no-repeat;">
 
-  <div class="overlay"></div>
+  <?php 
+  include "header.php"
+  ?>
 
   <div class="auth-card">
     <h1 class="auth-title">Login to Book Nest</h1>
+    <?php if (!empty($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
     <form action="login.php" method="POST">
       <div class="form-group">
         <label for="email">Email:</label>

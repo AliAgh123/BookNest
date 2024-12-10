@@ -1,83 +1,82 @@
 body {
-    font-family: 'EB Garamond', serif;
-    color: #4a3c31;
-    position: relative;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  .auth-card {
-    background: #fefbf6;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    margin: 10% auto;
-    text-align: center;
-  }
-  
-  .auth-title {
-    font-family: 'Old London', cursive;
-    font-size: 2rem;
-    color: #6e503e;
-    margin-bottom: 1rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #d4c6b8;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #c19a6b;
-  }
-  
-  .btn-login {
-    background-color: #c19a6b;
-    color: #fff;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .btn-login:hover {
-    background-color: #a68156;
-  }
-  
-  .toggle-text {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .toggle-text a {
-    color: #c19a6b;
-    text-decoration: none;
-  }
-  
-  .toggle-text a:hover {
-    text-decoration: underline;
-  }
-  
+	font-family: "EB Garamond", serif;
+	color: #4a3c31;
+	position: relative;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.auth-card {
+	background: #fefbf6;
+	padding: 2rem;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	max-width: 400px;
+	margin: 10% auto;
+	text-align: center;
+}
+
+.auth-title {
+	font-family: "Old London", cursive;
+	font-size: 2rem;
+	color: #6e503e;
+	margin-bottom: 1rem;
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+	text-align: left;
+}
+
+label {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+input {
+	width: 100%;
+	padding: 0.8rem;
+	border: 1px solid #d4c6b8;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
+input:focus {
+	outline: none;
+	border-color: #c19a6b;
+}
+
+.btn-login {
+	background-color: #c19a6b;
+	color: #fff;
+	border: none;
+	padding: 0.8rem 2rem;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+.btn-login:hover {
+	background-color: #a68156;
+}
+
+.toggle-text {
+	margin-top: 1rem;
+	font-size: 0.9rem;
+}
+
+.toggle-text a {
+	color: #c19a6b;
+	text-decoration: none;
+}
+
+.toggle-text a:hover {
+	text-decoration: underline;
+}

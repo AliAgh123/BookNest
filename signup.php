@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -65,8 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h2>Sign Up</h2>
 
 
-    <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <?php if (!empty($success)) echo "<p style='color:green;'>$success</p>"; ?>
+    
 
     <form action="signup.php" method="POST">
         <label for="full_name">Full Name *</label>
@@ -103,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p>Already have an account? <a href="login.php">Login here</a></p>
 
 </body>
-</html>
+</html> -->
 
 <!-- added part -->
 <!DOCTYPE html>
@@ -112,38 +111,60 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up | Book Nest</title>
-  <link rel="stylesheet" href="signup_styles.css">
+  <link rel="stylesheet" href="style/login.css">
+  <link rel="stylesheet" href="style/malak_styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Old+London&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body style="background: url('library-background.jpg') center/cover no-repeat;">
-
-  <div class="overlay"></div>
+<body style="background: url('https://c4.wallpaperflare.com/wallpaper/526/8/1002/library-interior-interior-design-books-wallpaper-preview.jpg') center/cover no-repeat;">
+  <?php
+  include "header.php"
+  ?>
 
   <div class="signup-container">
-    <h1 class="signup-title">Create Your Account</h1>
-    <p class="signup-subtitle">Join Book Nest and explore the world of books.</p>
+    <div class="auth-card">
+      <h1 class="auth-title">Create Your Account</h1>
+      <p class="signup-subtitle">Join Book Nest and explore the world of books.</p>
+      <br/>
 
-    <form action="signup.php" method="POST" class="signup-form">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-      </div>
-      <div class="form-group">
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
-      </div>
-      <button type="submit" class="signup-btn">Sign Up</button>
-    </form>
+      <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
+      <?php if (!empty($success)) echo "<p style='color:green;'>$success</p>"; ?>
+      
+      <form action="signup.php" method="POST" class="signup-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-    <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone"><br><br>
+
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address"><br><br>
+
+          <label for="user_type">User Type</label>
+          <select id="user_type" name="user_type">
+              <option value="reader" selected>Reader</option>
+              <option value="author">Author</option>
+              <option value="publisher">Publisher</option>
+          </select><br><br>
+
+          <label for="bio">Bio</label>
+          <textarea id="bio" name="bio" rows="4" cols="40"></textarea><br><br>
+
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+        </div>
+
+        <button type="submit" class="btn-login">Sign Up</button>
+      </form>
+
+      <p class="toggle-text">Already have an account? <a href="login.php">Log in</a></p>
+    </div>
   </div>
 
 </body>
