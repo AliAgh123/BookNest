@@ -41,14 +41,14 @@
 				</button>
 				<div class="nav-container">
 					<ul class="nav-menu">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="malak_products.html">Products</a></li>
-						<li><a href="akbar_checkOut.html">CheckOut</a></li>
-						<li><a href="About.html">About Us</a></li>
-						<li><a href="profile.html">Profile</a></li>
-						<li><a href="dashboardHome.html">Dashboard</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="products.php">Products</a></li>
+						<li><a href="akbar_checkOut.php">CheckOut</a></li>
+						<li><a href="About.php">About Us</a></li>
+						<li><a href="profile.php">Profile</a></li>
+						<li><a href="dashboardHome.php">Dashboard</a></li>
 						<li id="cart-container">
-							<a href="akbar_cart.html" id="cart-page-link">
+							<a href="akbar_cart.php" id="cart-page-link">
 								<i class="bi bi-cart3"></i>
 								<span
 									id="cart-count"
@@ -65,23 +65,23 @@
 			<aside class="sidebar" id="sidebar">
 				<h2>Admin Dashboard</h2>
 				<nav>
-					<a class="active" href="./dashboardHome.html">Dashboard Home</a>
-					<a href="./productManagement.html">Product Management</a>
-					<a href="./orderManagement.html">Order Management</a>
-					<a href="./authors&publishers.html">Authors & Publishers</a>
-					<a href="./customersDashboard.html">Customers</a>
+					<a class="active" href="./dashboardHome.php">Dashboard Home</a>
+					<a href="./productManagement.php">Product Management</a>
+					<a href="./orderManagement.php">Order Management</a>
+					<a href="./authors&publishers.php">Authors & Publishers</a>
+					<a href="./customersDashboard.php">Customers</a>
 				</nav>
 			</aside>
 			<div class="rightSideDashboard">
-				<!-- Main Content Area -->
+				
 				<main class="content">
-					<!-- Dashboard Header -->
+					
 					<header class="title-header">
 						<h1>Welcome to the Dashboard</h1>
 						<p>Overview of your bookstore’s performance</p>
 					</header>
 
-					<!-- Summary Cards -->
+					
 					<section class="summary-cards">
 						<div class="card">
 							<h3>Total Sales</h3>
@@ -101,7 +101,7 @@
 						</div>
 					</section>
 
-					<!-- Recent Activity -->
+					
 					<section class="recent-activity">
 						<h2>Recent Activity</h2>
 						<ul>
@@ -112,7 +112,6 @@
 						</ul>
 					</section>
 
-					<!-- Quick Actions -->
 					<section class="quick-actions">
 						<h2>Quick Actions</h2>
 						<div class="action-buttons">

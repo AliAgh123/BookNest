@@ -45,11 +45,11 @@ $result = $conn->query($sql);
         <aside class="sidebar" id="sidebar">
             <h2>Admin Dashboard</h2>
             <nav>
-                <a href="./dashboardHome.html">Dashboard Home</a>
-                <a href="./productManagement.html">Product Management</a>
-                <a class="active" href="./orderManagement.html">Order Management</a>
-                <a href="./authors&publishers.html">Authors & Publishers</a>
-                <a href="./customersDashboard.html">Customers</a>
+                <a href="./dashboardHome.php">Dashboard Home</a>
+                <a href="./productManagement.php">Product Management</a>
+                <a class="active" href="./orderManagement.php">Order Management</a>
+                <a href="./authors&publishers.php">Authors & Publishers</a>
+                <a href="./customersDashboard.php">Customers</a>
             </nav>
         </aside>
         <div class="rightSideDashboard">

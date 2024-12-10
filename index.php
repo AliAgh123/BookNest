@@ -25,7 +25,7 @@
 			<section class="hero">
 				<h2>Welcome to Book Nest</h2>
 				<p>Your one-stop destination for a wide range of books.</p>
-				<button onclick="window.location.href='malak_products.html'">
+				<button onclick="window.location.href='products.php'">
 					Explore Now
 				</button>
 			</section>
