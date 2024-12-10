@@ -11,7 +11,7 @@ CREATE TABLE users (
     address VARCHAR(255),
     user_type ENUM('reader', 'author', 'publisher') DEFAULT 'reader',
     bio VARCHAR(255) DEFAULT NULL,
-    profile_image VARCHAR(255) DEFAULT 'images/profileDefault.jpg'
+    profile_image VARCHAR(255) DEFAULT 'images/profileImages/profileDefault.jpg'
 );
 
 
@@ -23,7 +23,7 @@ CREATE TABLE books (
     genre VARCHAR(100),
     price DECIMAL(10, 2) NOT NULL,
     isbn VARCHAR(13) UNIQUE,
-    cover_image VARCHAR(255),
+    cover_image VARCHAR(255) DEFAULT 'images/bookImages/coverImage.gif',
     stock INT DEFAULT 0,
     format ENUM('eBook', 'Hardcover', 'Paperback') NOT NULL,
     FOREIGN KEY (author_id) REFERENCES users(id) 

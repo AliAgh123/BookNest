@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $stmt = $conn->prepare("INSERT INTO users (full_name, email, password, phone, address, user_type, bio, profile_image) 
                                     VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $default_image = 'images/profileDefault.jpg';
+            $default_image = 'images/profileImages/profileDefault.jpg';
             $stmt->bind_param("ssssssss", $full_name, $email, $hashed_password, $phone, $address, $user_type, $bio, $default_image);
 
             if ($stmt->execute()) {
