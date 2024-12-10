@@ -69,3 +69,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Book Nest</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Old+London&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: url('library-background.jpg') center/cover no-repeat;">
+
+  <div class="overlay"></div>
+
+  <div class="auth-card">
+    <h1 class="auth-title">Login to Book Nest</h1>
+    <form action="login.php" method="POST">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn btn-login">Login</button>
+    </form>
+    <p class="toggle-text">Don't have an account? <a href="signup.php">Sign up</a></p>
+  </div>
+
+</body>
+</html>
